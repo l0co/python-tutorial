@@ -13,5 +13,5 @@ def type_hints():
     spam: int = 1
     print(type(spam))  # <class 'int'>
     spam = "1"         # now here it complains with warning, but still works (look at the next line)
-    print(type(spam))  # <class 'int'>
+    print(type(spam))  # <class 'str'>
 type_hints()
