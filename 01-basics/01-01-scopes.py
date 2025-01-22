@@ -26,21 +26,3 @@ shadow_vars_2()  # 2
 print(global_scope_var)  # 1
 # conclusion: outer scope var can be shadowed, a new variable is defined in this scenario and outer scope var is
 # left untouched
-
-#######################################################################################################################
-print("\ndynamic typing - a base flaw like in other scripting languages")
-def dynamic_typing():
-    spam = 1
-    print(type(spam))  # <class 'int'>
-    spam = "1"
-    print(type(spam))  # <class 'str'>
-dynamic_typing()
-
-#######################################################################################################################
-print("\nbut they now that and worked around already so Python TypeScript unlikely appears")
-def type_hints():
-    spam: int = 1
-    print(type(spam))  # <class 'int'>
-    spam = "1"         # now here it complains with warning, but still works (look at the next line)
-    print(type(spam))  # <class 'int'>
-type_hints()
