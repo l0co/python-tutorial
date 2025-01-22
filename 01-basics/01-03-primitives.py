@@ -13,7 +13,7 @@ int_and_float()
 print("\nstrings")
 def strings():
 
-    # quotes (no defined in code style)
+    # quotes (not s[ecified by code style)
     print('hello single quoted')  # hello single quoted
     print("hello double quoted")  # hello double-quoted
 
