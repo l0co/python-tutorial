@@ -1,7 +1,7 @@
 #######################################################################################################################
 print("no local code block, and can't be easily worked around")
 if True:
-    localScopeVar = 10  # variable names convention looks inconsistent, here they don't complain I used camel case
+    localScopeVar = 10  # variable names convention looks inconsistent, here they don't complain I used camel case here
 print(localScopeVar)  # 10
 # conclusion: it looks as a truly misleading inconsistency in relation to other langs because not always
 # an inner code block creates a scope; sometimes it creates and sometimes not
