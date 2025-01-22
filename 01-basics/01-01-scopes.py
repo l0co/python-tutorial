@@ -4,7 +4,7 @@ if True:
     localScopeVar = 10  # variable names convention looks inconsistent, here they don't complain I used camel case
 print(localScopeVar)  # 10
 # conclusion: it looks as a truly misleading inconsistency in relation to other langs because not always
-# a code block creates a scope; sometimes it creates and sometimes not
+# an inner code block creates a scope; sometimes it creates and sometimes not
 # only function, class, etc. creates a local scope, but it's a function, class, etc...
 def local_scope_test():
     local_scope_var = 10  # here they complaints about camel case and I have to use snake case
