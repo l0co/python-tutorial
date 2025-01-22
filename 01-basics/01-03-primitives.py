@@ -5,8 +5,8 @@ def int_and_float():
     print(type(1.1))  # <class 'float'>
     print(5/2, type(5/2))  # 2.5 float (floating point integer division)
     print(5//2, type(5//2), 5 % 2, type(5 % 2))  # 2 int 1 int (integer division and modulo)
-                                             # funny, complaints about no spaces around modulo operator, but not about
-                                             # division operators
+                                                 # funny, complaints about no spaces around modulo operator, but not
+                                                 # about division operators
 int_and_float()
 
 #######################################################################################################################
