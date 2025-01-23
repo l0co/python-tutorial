@@ -1,10 +1,10 @@
 #######################################################################################################################
 print("int and float")
 def int_and_float():
-    print(type(1))  # <class 'int'>
-    print(type(1.1))  # <class 'float'>
-    print(5 / 2, type(5 / 2))  # 2.5 float (floating point integer division)
-    print(5 // 2, type(5 // 2), 5 % 2, type(5 % 2))  # 2 int 1 int (integer division and modulo)
+    print(type(1))  # STDOUT: <class 'int'>
+    print(type(1.1))  # STDOUT: <class 'float'>
+    print(5 / 2, type(5 / 2))  # STDOUT: 2.5 <class 'float'> (floating point integer division)
+    print(5 // 2, type(5 // 2), 5 % 2, type(5 % 2))  # STDOUT: 2 <class 'int'> 1 <class 'int'> (int division and modulo)
 int_and_float()
 
 #######################################################################################################################
@@ -12,46 +12,44 @@ print("\nstrings")
 def strings():
 
     # quotes (not s[ecified by code style)
-    print('hello single quoted')  # hello single quoted
-    print("hello double quoted")  # hello double-quoted
+    print('hello single quoted')  # STDOUT: hello single quoted
+    print("hello double quoted")  # STDOUT: hello double-quoted
 
     # special chars
-    print("hello\nnew line")  # hello
+    print("hello\nnew line")  # STDOUT: hello
                               # new line
-    print(r"hello\nraw string")  # hello\nraw string
+    print(r"hello\nraw string")  # STDOUT: hello\nraw string
 
     # multiline
     print("""hello
-    new line""")  # hello
+    new line""")  # STDOUT: hello
                   #           newline
                   # so \n at the end of each line is preserved
     print("""hello\
-    same line""")  # hello    same line
-                  # to skip \n use "\" at the end of line
-                  # but sill, "new line" is indented as in the code, this can be overcome with textwrap.dedent()
+    same line""")  # STDOUT: hello    same line
+                   # to skip \n use "\" at the end of line
+                   # but still, "same line" part is indented as in the code, this can be overcome with textwrap.dedent()
     print("hello "
-          "same line")  # hello same line
-                        # better multiline strings - auto concatenation with no operator
+          "same line")  # STDOUT: hello same line (better multiline strings - auto concatenation with no operator)
     print("hello " +
-          "same line")  # hello same line
-                        # the same with "+" operator
+          "same line")  # STDOUT: hello same line (the same with "+" operator)
 
     # multiplication
-    print(3 * "hello ")  # hello hello hello
+    print(3 * "hello ")  # STDOUT: hello hello hello
 
-    # finding chars, substrings etc. (nice!)
+    # finding chars, substrings etc. (nice)
     my_string = "0123456789"
-    print(my_string[0])      # 0 - first char
-    print(my_string[-1])     # -1 - last char
-    print(my_string[2:5])    # 234 - substring (from the head)
-    print(my_string[2:])     # 23456789 - substring (from the head)
-    print(my_string[-3:-1])  # 78 - substring (from the tail)
-    print(my_string[-3:])    # 789 - substring (from the tail)
-    print(my_string[5:2])    # watch out: empty string with no additional warning (!)
-    # print(my_string[52])   # but this ends up with "string index out of range" exception
-    # my_string[0] = "1"     # and finally, strings are immutable
-                             # so ""'str' object does not support item assignment" exception is thrown here
+    print(my_string[0])      # STDOUT: 0 (first char)
+    print(my_string[-1])     # STDOUT: -1 (last char)
+    print(my_string[2:5])    # STDOUT: 234 (substring: from the head)
+    print(my_string[2:])     # STDOUT: 23456789 (substring: from the head)
+    print(my_string[-3:-1])  # STDOUT: 78 (substring: from the tail)
+    print(my_string[-3:])    # STDOUT: 789 (substring: from the tail)
+    print(my_string[5:2])    # CAUTION: empty string with no additional warning
+    # print(my_string[52])   # ERROR: but this ends up with "string index out of range" exception
+    # my_string[0] = "1"     # ERROR: 'str' object does not support item assignment" exception is thrown here
+                             # so, finally, strings are immutable
 
     # length
-    print(len(my_string))  # by built-in multipurpose function
+    print(len(my_string))  # STDOUT: 10 (by built-in multipurpose function)
 strings()
