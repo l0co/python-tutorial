@@ -1,5 +1,11 @@
 #######################################################################################################################
-print("no local code block, and can't be easily worked around")
+print("so, code block is tab indentation, bye {}")
+def function():
+    print("hello from code block")
+function()
+
+#######################################################################################################################
+print("\nno local code block scope, and can't be easily worked around")
 if True:
     localScopeVar = 10  # variable names convention looks inconsistent, here they don't complain I used camel case here
 print(localScopeVar)  # 10

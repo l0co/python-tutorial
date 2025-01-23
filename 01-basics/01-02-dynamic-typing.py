@@ -1,5 +1,5 @@
 #######################################################################################################################
-print("dynamic typing - a base flaw like in other scripting languages")
+print("dynamic typing - the same base flaw like in other scripting languages")
 def dynamic_typing():
     spam = 1
     print(type(spam))  # <class 'int'>
@@ -12,6 +12,6 @@ print("\nbut they know that and worked around already so Python TypeScript unlik
 def type_hints():
     spam: int = 1
     print(type(spam))  # <class 'int'>
-    spam = "1"         # now here it complains with warning, but still works (look at the next line)
+    spam = "1"         # now here it at least complains with warning, but strict check is not enforced
     print(type(spam))  # <class 'str'>
 type_hints()
