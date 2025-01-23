@@ -12,6 +12,6 @@ print("\nbut they know that and worked around already so Python TypeScript unlik
 def type_hints():
     spam: int = 1
     print(type(spam))  # STDOUT: <class 'int'>
-    spam = "1"         # now here IDE at least complains with warning, but strict check is not enforced (next line)
+    spam = "1"         # now here IDE at least complaints with warning, but strict check is not enforced (next line)
     print(type(spam))  # STDOUT: <class 'str'>
 type_hints()
