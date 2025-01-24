@@ -24,3 +24,27 @@ def remove_var():
     del spam
     # print(spam)  # ERROR: local variable 'spam' referenced before assignment
 remove_var()
+
+#######################################################################################################################
+print("\nlets delve into the flaw a bit more")
+def dynamic_typing_in_methods(a, b, c):
+    # print(a + b // c)  # ALLOWED but ERROR: unsupported operand type(s) for //: 'int' and 'str'
+    # print(a.my_property)  # ALLOWED but ERROR: 'int' object has no attribute 'my_property'
+    # print(a[b])  # ALLOWED but ERROR: 'int' object is not subscriptable
+    # ¯\_(ツ)_/¯  why, God?
+    pass
+dynamic_typing_in_methods(1, 2, "three")
+
+#######################################################################################################################
+print("\nrecognizing development patterns")
+# a - try with many different things, maybe you're lucky
+# a - try to find some usages in other code, maybe you're lucky
+# a - look on stackoverflow for examples
+# a - don't even try to look into docs because they don't bother to specify function types in docs
+def make_money_for_me(a):
+    if a == "magic string":
+        print("making a lot of money for you")
+    else:
+        raise Exception("If you don't know how to use it, just don't use it!")
+make_money_for_me(["list", "maybe?"])
+
