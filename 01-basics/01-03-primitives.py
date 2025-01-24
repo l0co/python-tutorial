@@ -40,7 +40,7 @@ def strings():
     # finding chars, substrings etc. (nice)
     my_string = "0123456789"
     print(my_string[0])      # STDOUT: 0 (first char)
-    print(my_string[-1])     # STDOUT: -1 (last char)
+    print(my_string[-1])     # STDOUT: 9 (last char)
     print(my_string[2:5])    # STDOUT: 234 (substring: from the head)
     print(my_string[2:])     # STDOUT: 23456789 (substring: from the head)
     print(my_string[-3:-1])  # STDOUT: 78 (substring: from the tail)
