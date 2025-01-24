@@ -18,7 +18,8 @@ def list_access_and_slicing():
     print(my_list[5:2])    # CAUTION: empty list with no additional warning
     # print(my_list[52])   # ERROR: but this ends up with "list index out of range" exception
     my_list[0] = 100       # lists are mutable
-    print(my_list)         # STDOUT: [100, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    my_list[-1] = 200      # very are mutable
+    print(my_list)         # STDOUT: [100, 1, 2, 3, 4, 5, 6, 7, 8, 200]
 list_access_and_slicing()
 
 #######################################################################################################################
@@ -39,7 +40,25 @@ def list_stdops():
     does_it_remove_all_the_same_elements()
     my_list[2:3] = []
     print(my_list)
-
 list_stdops()
 
+#######################################################################################################################
+print("\nlist removals and replacements")
+def list_removals():
+    my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    del my_list[0]  # remove element with index 0 - first way
+    print(my_list)  # STDOUT: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    my_list.pop(0)  # remove element with index 0 - second way
+    print(my_list)  # STDOUT: [2, 3, 4, 5, 6, 7, 8, 9]
+    my_list[0:1] = []  # remove element with index 0 - third way (replace list slice with an empty list)
+    print(my_list)  # STDOUT: [3, 4, 5, 6, 7, 8, 9]
+    my_list[3:6] = []  #       0  1  2  3--4--5..6 (first element inclusive, last exclusive)
+    print(my_list)  # STDOUT: [3, 4, 5, 9]
+list_removals()
 
+#######################################################################################################################
+print("\nmaster len function")
+def master_len():
+    my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    print(len(my_list))  # STDOUT: 10
+master_len()

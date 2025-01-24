@@ -32,3 +32,11 @@ shadow_vars_2()  # STDOUT: 2
 print(global_scope_var)  # STDOUT: 1
 # CONCLUSION: outer scope var can be shadowed, a new variable is defined in this scenario in a local scope,
 # and the outer scope var is left untouched
+
+#######################################################################################################################
+print("\ndeclaring multiple vars")
+def declare_multiple_vars():
+    a, b = 1, "a"
+    print(a, b)
+    # a: int, b: string = 1, "a"  # not possible with type hints
+declare_multiple_vars()

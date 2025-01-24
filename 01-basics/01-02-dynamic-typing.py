@@ -15,3 +15,12 @@ def type_hints():
     spam = "1"         # now here IDE at least complaints with warning, but strict check is not enforced (next line)
     print(type(spam))  # STDOUT: <class 'str'>
 type_hints()
+
+#######################################################################################################################
+print("\nand the biggest question here is why to reuse the same var with different type if we have a variable removal")
+def remove_var():
+    spam: int = 1
+    print(spam)
+    del spam
+    # print(spam)  # ERROR: local variable 'spam' referenced before assignment
+remove_var()
