@@ -32,7 +32,7 @@ def dynamic_typing_in_methods(a, b, c):
     # print(a.my_property)  # ALLOWED but ERROR: 'int' object has no attribute 'my_property'
     # print(a[b])  # ALLOWED but ERROR: 'int' object is not subscriptable
     # ¯\_(ツ)_/¯  why, God?
-    pass
+    pass  # this is an empty code block
 dynamic_typing_in_methods(1, 2, "three")
 
 #######################################################################################################################
