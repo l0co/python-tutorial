@@ -42,7 +42,7 @@ print("\nrecognizing development patterns")
 # a - look on stackoverflow for examples, maybe you're lucky
 # a - don't even try to look into docs because they don't bother to specify function types in docs
 def make_money_for_me(a):
-    if a == "magic string":
+    if a == ["magic string", 123333, 0.2]:
         print("making a lot of money for you")
     else:
         raise Exception("If you don't know how to use it, just don't use it!")
