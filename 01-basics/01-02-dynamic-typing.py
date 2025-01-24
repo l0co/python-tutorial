@@ -39,7 +39,7 @@ dynamic_typing_in_methods(1, 2, "three")
 print("\nrecognizing development patterns")
 # a - try with many different things, maybe you're lucky
 # a - try to find some usages in other code, maybe you're lucky
-# a - look on stackoverflow for examples
+# a - look on stackoverflow for examples, maybe you're lucky
 # a - don't even try to look into docs because they don't bother to specify function types in docs
 def make_money_for_me(a):
     if a == "magic string":
