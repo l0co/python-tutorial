@@ -30,9 +30,14 @@ standard_while(5)  # STDOUT: inc; inc; inc; inc; inc; x reached 10
 #######################################################################################################################
 print("\nfor is \"in something\" by default")
 def for_in():
-    for x in [1, 2, 3]:  # in list
-        print(x, end="")  # STDOUT: 123
+    for x in [0, 1, 2]:  # in list
+        print(x, end="")  # STDOUT: 012
     print("")
-    for x in range(1, 3):  # in range
-        print(x, end="")  # STDOUT: 12 (first inclusive, last exclusive)
+    for x in range(0, 2):  # in range
+        print(x, end="")  # STDOUT: 01 (first inclusive, last exclusive)
+    print("")
+    for x in range(0, 9, 3):  # in range with custom step (3)
+        print(x, end="")  # STDOUT: 036
 for_in()
+
+

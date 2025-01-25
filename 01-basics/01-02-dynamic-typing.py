@@ -46,6 +46,6 @@ def make_money_for_me(a):
     if a == ["magic string", 123333, 0.2]:
         print("making a lot of money for you")
     else:
-        raise Exception("If you don't know how to use it, just don't use it!")
+        raise Exception("If you don't know how to use it, just you're not gonna make any money at all!")
 make_money_for_me(["list", "maybe?"])
 
