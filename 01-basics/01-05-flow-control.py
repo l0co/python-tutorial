@@ -21,7 +21,7 @@ standard_if(3)  # STDOUT: more than two
 print("\nstandard while")
 def standard_while(x: int):
     while x < 10:
-        print("inc; ", end="")  # end argument is an end line char, default is "\n" but one can overwrite
+        print("inc; ", end="")  # "end" argument is an end line char, default is "\n" but one can overwrite
         x = x + 1
     else:
         print("x reached 10")
