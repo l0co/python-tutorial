@@ -18,7 +18,7 @@ standard_if(2)  # STDOUT: two
 standard_if(3)  # STDOUT: more than two
 
 #######################################################################################################################
-print("standard while")
+print("\nstandard while")
 def standard_while(x: int):
     while x < 10:
         print("inc; ", end="")  # end argument is an end line char, default is "\n" but one can overwrite
