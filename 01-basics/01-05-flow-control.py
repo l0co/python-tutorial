@@ -27,3 +27,12 @@ def standard_while(x: int):
         print("x reached 10")
 standard_while(5)  # STDOUT: inc; inc; inc; inc; inc; x reached 10
 
+#######################################################################################################################
+print("\nfor is \"in something\" by default")
+def for_in():
+    for x in [1, 2, 3]:  # in list
+        print(x, end="")  # STDOUT: 123
+    print("")
+    for x in range(1, 3):  # in range
+        print(x, end="")  # STDOUT: 12 (first inclusive, last exclusive)
+for_in()
