@@ -8,7 +8,7 @@ def standard_if(x: int):  # for all those who are scared about "dynamic typing" 
         print("two")
     else:
         print("more than two")
-# standard_if()  #  ERROR: standard_if() missing 1 required positional argument
+# standard_if()  # ERROR: standard_if() missing 1 required positional argument
                  # leaving this example to point out that this is an INTERPRETED language
                  # this means that they go each line one after another and try to execute it
                  # if there's an error, you'll only know that in the runtime
@@ -105,4 +105,4 @@ loop_else()  # STDOUT: for/while loop has 'else' block which is executed only if
 #         case _:
 #             return "In my professional opinion, something has fucked up"
 # switch_match(500)  # STDOUT: In my professional opinion, something has fucked up
-# wow, I'm commenting out this since they figured out this clause in 2021, and I still have python 3.8 :)
+# wow, I'm commenting out this since they figured out this clause in 2021, and I still have Python 3.8 :)
