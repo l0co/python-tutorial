@@ -45,7 +45,7 @@ def for_in():
     print(range(0, 2).__iter__())  # STDOUT: <range_iterator object at 0x7f5f5053b900>
                                    # is range a list? not - all arguments passed to "for" should implement
                                    # "iterable" pattern, but in Python's way:
-    from collections.abc import Iterable
+    from collections.abc import Iterable  # voodoo binding between lang construct and importable type
     print(isinstance(range(0, 2), Iterable))  # STDOUT: True
     print(isinstance([0, 1, 2], Iterable))  # STDOUT: True
 for_in()
@@ -95,6 +95,8 @@ def loop_else():
     else:
         print("for/while loop has 'else' block which is not executed if loop has been broken")
 loop_else()  # STDOUT: for/while loop has 'else' block which is executed only if loop hasn't been broken
+
+# TODOLF 5.6
 
 #######################################################################################################################
 # print("\nstandard 'switch' which is 'match'")
