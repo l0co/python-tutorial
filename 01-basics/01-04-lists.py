@@ -90,5 +90,49 @@ def master_len():
     print(len(my_list))  # STDOUT: 10
 master_len()
 
-# TODOLF 5.1.1
+
+#######################################################################################################################
+print("\nlist as a stack")
+def list_as_stack():
+    my_stack = [0, 1, 2]
+    my_stack.append(3)
+    my_stack.append(4)
+    print(my_stack)  # STDOUT: [0, 1, 2, 3, 4]
+    print(my_stack.pop())  # STDOUT: 4
+    print(my_stack.pop())  # STDOUT: 3
+    print(my_stack)  # STDOUT: [0, 1, 2]
+list_as_stack()
+
+#######################################################################################################################
+print("\nlist as a LinkedList (LIFO, FIFO)")
+def list_as_linkedlist():
+    # a small comment to this:
+    # appending to the end of a list and popping from the end of the list from the above example is efficient,
+    # but it operates on a list tail, while the same operations on a list head are inneficient because
+    # they would require to reallocate the whole list [O(n)]
+    # so, Python provides a "deque wrapper" for lists which works in a very similar way to Java LinkedList
+    # use it to implement FIFO and LIFO queues; but be aware, they differ in implementation details:
+    # - Java LinkedList add/remove to/from whatever position: O(1)
+    # - Python deque: add/remove to/from tail or head: O(1), to/from whatever position: unsupported
+    # the implementation below is a circular queue: https://www.youtube.com/watch?v=CXmg8MRGv_k
+    from collections import deque  # Python naming standard for classes is CamelCase for classes and snake_case for
+                                   # functions and variables
+                                   # ¯\_(ツ)_/¯  why, God?
+                                   # but "deque" is a class which does not follow this standard
+                                   # ¯\_(ツ)_/¯  why, God?
+    my_list = [0, 1, 2]
+    my_deque = deque(my_list)
+    print(my_list)  # STDOUT: [0, 1, 2]
+    print(my_deque)  # STDOUT: deque([0, 1, 2])
+    my_deque.appendleft(-1)
+    print(my_list)  # STDOUT: [0, 1, 2]
+    print(my_deque)  # STDOUT: deque([-1, 0, 1, 2])
+                     # CONCLUSION: deque creates a list copy
+    print(my_deque.popleft())  # STDOUT: -1
+    print(my_list)  # STDOUT: [0, 1, 2]
+    print(my_deque)  # STDOUT: deque([0, 1, 2])
+                     # CONCLUSION: deque toString (and possibly iterator) works as supposed
+list_as_linkedlist()
+
+# TODOLF 5.1.3
 # TODOLF 5.2
