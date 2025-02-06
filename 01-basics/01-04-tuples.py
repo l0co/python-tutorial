@@ -108,10 +108,10 @@ def typed_tuple():
     # a kind of recap:
     # 1) tuple is not parametrized, and if you parametrize it, it warns you
     #    then, if you change the parameter types, it warns you
-    #    but still you can do that
+    #    but, you still can do that
     # 2) Tuple is parametrized, and if you parametrize it, it doesn't warn you
     #    then, if you change the parameter types, it warns you
-    #    but still you can do that
+    #    but, you still can do that
     # ¯\_(ツ)_/¯  why, God?
-    # ----> I'm anxiously waiting for TUple in Python 4, should be improved <----
+    # ----> I'm anxiously waiting for TUple in Python 4, it should be improved <----
 typed_tuple()
