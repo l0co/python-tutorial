@@ -134,5 +134,16 @@ def list_as_linkedlist():
                      # CONCLUSION: deque toString (and possibly iterator) works as supposed
 list_as_linkedlist()
 
+#######################################################################################################################
+print("\nlist mapping")
+def list_mapping():
+    my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    mapped = map(lambda x: x**2, my_list)  # map class is iterable, takes the lambda and another iterable and produce
+                                           # own iterable with lambda transformation
+    print(list(mapped))  # STDOUT: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+                         # list can be created from iterable and shows the lambda transformation results
+list_mapping()
+
+
 # TODOLF 5.1.3
 # TODOLF 5.2
