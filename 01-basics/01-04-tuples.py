@@ -9,8 +9,11 @@ def tuple_basics():
     my_tuple_2 = (1, 2, "three")
     print(my_tuple_2)  # STDOUT: (1, 2, 'three')
     # so, tuple should really be surrounded with () and it's the same
-    # CAUTION: Python allows "no brackets" notation which can be really, really misleading, like
+    # CAUTION: Python allows "no brackets" notation which can be really, but really misleading, like
     #          if I call function(x, y, z), are "x, y, z" arguments or one tuple argument?
+    #          WARN: if it's a tuple, it can't be parametrized (look at the examples above)
+    #          UNWARN: function arguments can be parametrized, and you can do whatever with these types, so ... whatever
+    #          ¯\_(ツ)_/¯  why, God?
 
     # tuples are immutable
     # my_tuple[0] = 1  # ERROR: 'tuple' object does not support item assignment
@@ -36,8 +39,9 @@ def tuple_basics():
     # like endless lists created with [1, 2, :)]
 tuple_basics()
 
-# after what we've seen, now a bit of conclusion comes, it's about the tutorial ad: Python’s elegant syntax
-# the example is from the sources I've seen during these tests:
+# after what we've seen, now a bit of conclusions, and it's about the tutorial ad: Python’s elegant syntax
+# (I'm adding this to "ended with comma" expressions shown above)
+# the example from Python sources I've seen during these tests:
 #
 # class map(Iterator[_S], Generic[_S]):
 #     @overload
@@ -70,3 +74,44 @@ tuple_basics()
 #
 # ¯\_(ツ)_/¯  why, God?
 
+#######################################################################################################################
+print("\nso, can we at least make a tuple 'typed'?")
+def typed_tuple():
+    my_tuple: tuple = (1, 2, "three")
+    print(my_tuple)  # STDOUT: (1, 2, 'three')
+    my_tuple = ("one", "two", 3)
+    print(my_tuple)  # STDOUT: ('one', 'two', 3)
+    # so, not directly
+
+    my_tuple_2: tuple[int, int, str] = (1, 2, "three")  # maybe this? feel not, because it warns
+                                                        # WARN: Builtin 'tuple' cannot be parameterized directly
+    print(my_tuple_2)  # STDOUT: (1, 2, 'three')
+    my_tuple_2 = ("one", "two", 3)  # WARN: Expected type 'Tuple[int, int, str]', got 'Tuple[str, str, int]' instead
+                                    # WOOOOW :O
+    print(my_tuple_2)  # STDOUT: ('one', 'two', 3)
+                       # but it works anyway
+
+    # but here comes the big brother of tuple called Tuple
+    # ¯\_(ツ)_/¯  why, God?
+    from typing import Tuple
+    my_big_brother_tuple: Tuple[str, int] = ("Alice", 25)  # does not complain that
+                                                           # Builtin 'tuple' cannot be parameterized directly
+                                                           # a big hope
+    print(my_big_brother_tuple)  # STDOUT: ('Alice', 25)
+    print(type(my_big_brother_tuple))  # <class 'tuple'>
+    # now the big check comes
+    my_big_brother_tuple = (25, "Alice")  # WARN: Expected type 'Tuple[str, int]', got 'Tuple[int, str]' instead
+                                          # (but still works)
+    print(my_big_brother_tuple)  # STDOUT: (25, 'Alice')
+    print(type(my_big_brother_tuple))  # <class 'tuple'>
+
+    # a kind of recap:
+    # 1) tuple is not parametrized, and if you parametrize it, it warns you
+    #    then, if you change the parameter types, it warns you
+    #    but still you can do that
+    # 2) Tuple is parametrized, and if you parametrize it, it doesn't warn you
+    #    then, if you change the parameter types, it warns you
+    #    but still you can do that
+    # ¯\_(ツ)_/¯  why, God?
+    # ----> I'm anxiously waiting for TUple in Python 4, should be improved <----
+typed_tuple()
