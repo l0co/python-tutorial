@@ -11,9 +11,7 @@ def tuple_basics():
     # so, tuple should really be surrounded with () and it's the same
     # CAUTION: Python allows "no brackets" notation which can be really, but really misleading, like
     #          if I call function(x, y, z), are "x, y, z" arguments or one tuple argument?
-    #          WARN: if it's a tuple, it can't be parametrized (look at the examples above)
-    #          UNWARN: function arguments can be parametrized, and you can do whatever with these types, so ... whatever
-    #          ¯\_(ツ)_/¯  why, God?
+    #          WARN: if it's a tuple, it can't be parametrized (look at the examples below)
 
     # tuples are immutable
     # my_tuple[0] = 1  # ERROR: 'tuple' object does not support item assignment
