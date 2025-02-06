@@ -24,7 +24,7 @@ def tuple_basics():
                                     # ¯\_(ツ)_/¯  why, God?
                                     # God: don't ask
 
-    one_element_tuple_2 = ("one",)  # one element tuple approach 2, look the proper way
+    one_element_tuple_2 = ("one",)  # one element tuple approach 2, looks like the proper way
     print(type(one_element_tuple_2))  # STDOUT: <class 'tuple'>
 
     one_element_tuple_3 = "one",  # one element tuple approach 3
@@ -33,11 +33,11 @@ def tuple_basics():
     # some final thoughts
     # if you look for something super-weird like lines ended with comma, bracket expressions ended with comma
     # probably function arguments ended with comma ... and stuff: Python is for you
-    # like endless list created with [1, 2, :)]
+    # like endless lists created with [1, 2, :)]
 tuple_basics()
 
-# after we saw, now a bit of conclusion comes, it's about the tutorial ad: Python’s elegant syntax
-# the example is from source I've seen during these tests:
+# after what we've seen, now a bit of conclusion comes, it's about the tutorial ad: Python’s elegant syntax
+# the example is from the sources I've seen during these tests:
 #
 # class map(Iterator[_S], Generic[_S]):
 #     @overload
@@ -69,3 +69,4 @@ tuple_basics()
 #     ) -> None: ...
 #
 # ¯\_(ツ)_/¯  why, God?
+
