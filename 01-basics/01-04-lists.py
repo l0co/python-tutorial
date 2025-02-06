@@ -148,9 +148,14 @@ list_mapping()
 print("\nlist comprehension")
 def list_comprehension():
     my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    my_square_list = [x**2 for x in my_list]  # a list can be created from other iterable with this expression
+    my_square_list = [x ** 2 for x in my_list]  # a list can be created from other iterable with this expression
                                               # it stands for "call each item from 'my_list' x and for each do x**2"
     print(my_square_list)  # STDOUT: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+    my_even_square_list = [x**2 for x in my_list if x % 2 == 0]  # additional 'if' clause can act a list filter
+    print(my_even_square_list)  # STDOUT: [0, 4, 16, 36, 64]
+    my_even_and_divisible_by_three_list = [x**2 for x in my_list if x % 2 == 0 if x % 3 == 0]  # more 'if'-s possible
+                                                                                               # like it was no 'and' :/
+    print(my_even_and_divisible_by_three_list)  # STDOUT: [0, 36]
 list_comprehension()
 
 # TODOLF 5.1.3
