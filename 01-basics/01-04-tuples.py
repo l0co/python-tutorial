@@ -37,41 +37,6 @@ def tuple_basics():
     # like endless lists created with [1, 2, :)]
 tuple_basics()
 
-# after what we've seen, now a bit of conclusions, and it's about the tutorial ad: Python’s elegant syntax
-# (I'm adding this to "ended with comma" expressions shown above)
-# the example from Python sources I've seen during these tests:
-#
-# class map(Iterator[_S], Generic[_S]):
-#     @overload
-#     def __init__(self, __func: Callable[[_T1], _S], __iter1: Iterable[_T1]) -> None: ...
-#     @overload
-#     def __init__(self, __func: Callable[[_T1, _T2], _S], __iter1: Iterable[_T1], __iter2: Iterable[_T2]) -> None: ...
-#     @overload
-#     def __init__(
-#         self, __func: Callable[[_T1, _T2, _T3], _S], __iter1: Iterable[_T1], __iter2: Iterable[_T2], __iter3: Iterable[_T3]
-#     ) -> None: ...
-#     @overload
-#     def __init__(
-#         self,
-#         __func: Callable[[_T1, _T2, _T3, _T4], _S],
-#         __iter1: Iterable[_T1],
-#         __iter2: Iterable[_T2],
-#         __iter3: Iterable[_T3],
-#         __iter4: Iterable[_T4],
-#     ) -> None: ...
-#     @overload
-#     def __init__(
-#         self,
-#         __func: Callable[[_T1, _T2, _T3, _T4, _T5], _S],
-#         __iter1: Iterable[_T1],
-#         __iter2: Iterable[_T2],
-#         __iter3: Iterable[_T3],
-#         __iter4: Iterable[_T4],
-#         __iter5: Iterable[_T5],
-#     ) -> None: ...
-#
-# ¯\_(ツ)_/¯  why, God?
-
 #######################################################################################################################
 print("\nso, can we at least make a tuple 'typed'?")
 def typed_tuple():
@@ -104,12 +69,8 @@ def typed_tuple():
     print(type(my_big_brother_tuple))  # <class 'tuple'>
 
     # a kind of recap:
-    # 1) tuple is not parametrized, and if you parametrize it, it warns you
-    #    then, if you change the parameter types, it warns you
-    #    but, you still can do that
-    # 2) Tuple is parametrized, and if you parametrize it, it doesn't warn you
-    #    then, if you change the parameter types, it warns you
-    #    but, you still can do that
+    # 1) tuple is not really typed, can warn you, but allows to do anything then
+    # 2) a solution for that is Tuple, which is not really typed, can warn you, but allows to do anything then
     # ¯\_(ツ)_/¯  why, God?
-    # ----> I'm anxiously waiting for TUple in Python 4, it should be improved <----
+    # ----> I'm anxiously waiting for TuplE in Python 4, it should be improved <----
 typed_tuple()
