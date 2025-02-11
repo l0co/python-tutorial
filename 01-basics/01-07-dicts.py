@@ -54,3 +54,10 @@ def dict_comprehension():
     my_dict = {x: x ** 2 for x in range(4)}
     print(my_dict)  # STDOUT: {0: 0, 1: 1, 2: 4, 3: 9}
 dict_comprehension()
+
+#######################################################################################################################
+print("\ndicts comparison (fortunately, not supported)")
+def sets_comparison():
+    # print({"A": 1} < {"B": 1})  # ERROR '<' not supported between instances of 'dict' and 'dict'"
+    pass
+sets_comparison()
