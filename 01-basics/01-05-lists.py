@@ -149,14 +149,55 @@ print("\nlist comprehension")
 def list_comprehension():
     my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     my_square_list = [x ** 2 for x in my_list]  # a list can be created from other iterable with this expression
-                                              # it stands for "call each item from 'my_list' x and for each do x**2"
+                                                # it stands for "call each item from 'my_list' x and for each do x**2"
     print(my_square_list)  # STDOUT: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
     my_even_square_list = [x**2 for x in my_list if x % 2 == 0]  # additional 'if' clause can act a list filter
     print(my_even_square_list)  # STDOUT: [0, 4, 16, 36, 64]
+
     my_even_and_divisible_by_three_list = [x**2 for x in my_list if x % 2 == 0 if x % 3 == 0]  # more 'if'-s possible
-                                                                                               # like it was no 'and' :/
+                                                                                               # like it was no 'and' :O
     print(my_even_and_divisible_by_three_list)  # STDOUT: [0, 36]
+
+    my_tuple_list = [(x, y) for x in [1, 2] for y in [3, 4]]  # tuple list can be cross-joined from many lists
+    print(my_tuple_list)  # STDOUT: [(1, 3), (1, 4), (2, 3), (2, 4)]
 list_comprehension()
 
-# TODOLF 5.1.3
-# TODOLF 5.2
+#######################################################################################################################
+print("\nnested list comprehension")
+def nested_list_comprehension():
+    my_vec_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    my_vec_list_flattened = [num for vec in my_vec_list for num in vec]
+    print(my_vec_list_flattened)  # STDOUT: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    # for each vec in my_vec_list take num in vec and produce num
+    # it's like...
+    # curly braces show the inner expression meaning: [num {for vec in my_vec_list} for num in vec]
+    # curly braces show the outer expression meaning: [{num} for vec in my_vec_list {for num in vec}]
+    # equivalent of:
+    my_vec_list_flattened = []
+    for vec in my_vec_list:
+        for num in vec:
+            my_vec_list_flattened.append(num)
+    print(my_vec_list_flattened)  # STDOUT: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    my_vec_list_flattened_2 = [[vec[i] for vec in my_vec_list] for i in range(3)]
+    print(my_vec_list_flattened_2)  # STDOUT: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+    # inner and outer expresion is well separated here
+    # equivalent of:
+    my_vec_list_flattened_2 = []
+    for i in range(3):
+        my_vec_list_flattened_2.append([vec[i] for vec in my_vec_list])
+    print(my_vec_list_flattened_2)  # STDOUT: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+    # because:
+    print([vec[0] for vec in my_vec_list])
+nested_list_comprehension()  # STDOUT: [1, 4, 7]
+
+#######################################################################################################################
+print("\ndel and lists")
+def del_and_lists():
+    my_list = [0, 1, "two", 3, 4, 5, 6, 7, 8, 9]
+    del my_list[2]  # del removes the element by index (not by value)
+    print(my_list)  # STDOUT: [0, 1, 3, 4, 5, 6, 7, 8, 9]
+    del my_list[5:7]  # works with ranges too
+    print(my_list)  # STDOUT: [0, 1, 3, 4, 5, 8, 9]
+del_and_lists()
