@@ -1,5 +1,5 @@
 #######################################################################################################################
-print("sets")
+print("sets are LinkedHashSet<Object>")
 def sets():
     my_set = {1, 2, 2, 3}
     print(my_set)  # STDOUT: {1, 2, 3}
@@ -20,7 +20,7 @@ def sets():
 sets()
 
 #######################################################################################################################
-print("\niterables and sets")
+print("\ntyped sets")
 def typed_sets():
     from typing import Set
     my_set: Set[int] = {1, 2, "three"}  # we already know that
@@ -28,7 +28,7 @@ def typed_sets():
 typed_sets()
 
 #######################################################################################################################
-print("\niterables and sets")
+print("\nsets can be created from iterables")
 def set_iterables():
     my_set = set(range(4))  # set can be created from iterable with set()
     print(my_set)  # STDOUT: {0, 1, 2, 3}
@@ -43,4 +43,5 @@ def set_comprehension():
     my_set = {x ** 2 for x in range(4)}  # same as for lists
     print(my_set)  # STDOUT: {0, 1, 4, 9}
 set_comprehension()
+
 
