@@ -217,3 +217,12 @@ def del_and_lists():
     del my_list[5:7]  # works with ranges too
     print(my_list)  # STDOUT: [0, 1, 3, 4, 5, 8, 9]
 del_and_lists()
+
+#######################################################################################################################
+print("\nlists comparison (the same as string)")
+def lists_comparison():
+    print(["A"] < ["B"])  # STDOUT: True
+    print(["B"] < ["A"])  # STDOUT: False
+    print(["AA"] < ["AB"])  # STDOUT: True
+    print(["A", "A"] < ["A", "B"])  # STDOUT: True
+lists_comparison()

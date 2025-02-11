@@ -36,7 +36,6 @@ def set_iterables():
     print(my_set)  # STDOUT: {'a', 'c', 'r', 'd', 'b'}
 set_iterables()
 
-
 #######################################################################################################################
 print("\nset comprehension")
 def set_comprehension():
@@ -44,4 +43,19 @@ def set_comprehension():
     print(my_set)  # STDOUT: {0, 1, 4, 9}
 set_comprehension()
 
-
+#######################################################################################################################
+print("\nsets comparison (NEITHER the same as string NOR other iterables)")
+def sets_comparison():
+    print({"A"} < {"B"})  # STDOUT: False
+    print({"B"} < {"A"})  # STDOUT: False
+    print({"AA"} < {"AB"})  # STDOUT: False
+    print({"A", "A"} < {"A", "B"})  # STDOUT: True
+    # and wait for it
+    # .
+    # .
+    # .
+    # for sets they compare number of elements
+    # so if you have some collection on hand (of unknown type, because types are not very supported here
+    # and top what you can expect is that you have "some" iterable collection)
+    # comparison like this can blow up in your face
+sets_comparison()

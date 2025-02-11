@@ -57,3 +57,13 @@ def strings():
     # length
     print(len(my_string))  # STDOUT: 10 (by built-in multipurpose function)
 strings()
+
+#######################################################################################################################
+print("\nstrings comparison: Python implements iterable objects comparision")
+def strings_comparison():
+    # for all iterables we can use comparison, which compares 1st element, in case it differs returns,
+    # in case it's equals takes another one
+    print('A' < 'B')  # STDOUT: True
+    print('B' < 'A')  # STDOUT: False
+    print('AA' < 'AB')  # STDOUT: True
+strings_comparison()

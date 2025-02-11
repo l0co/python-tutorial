@@ -74,3 +74,12 @@ def typed_tuple():
     # ¯\_(ツ)_/¯  why, God?
     # ----> I'm anxiously waiting for TuplE in Python 4, it should be improved <----
 typed_tuple()
+
+#######################################################################################################################
+print("\ntuples comparison (the same as string)")
+def tuples_comparison():
+    print(("A", ) < ("B", ))  # STDOUT: True
+    print(("B", ) < ("A", ))  # STDOUT: False
+    print(("AA", ) < ("AB", ))  # STDOUT: True
+    print(("A", "A") < ("A", "B"))  # STDOUT: True
+tuples_comparison()
