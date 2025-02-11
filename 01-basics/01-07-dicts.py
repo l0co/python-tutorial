@@ -37,4 +37,16 @@ def typed_dicts():
 typed_dicts()
 
 
+#######################################################################################################################
+print("\ndicts can be constructed from iterable two element tuples")
+def dict_builder():
+    print(dict([(1, 2), (3, 4)]))  # STDOUT: {1: 2, 3: 4}
+
+    # warns but works too
+    print(dict([[1, 2], [3, 4]]))  # STDOUT: {1: 2, 3: 4}
+
+    # print(dict([(1, 2, 3), (3, 4, 5)]))  # ERROR: dictionary update sequence element #0 has length 3; 2 is required
+dict_builder()
+
+
 # TODOLF 5.5
