@@ -18,6 +18,35 @@ standard_if(2)  # STDOUT: two
 standard_if(3)  # STDOUT: more than two
 
 #######################################################################################################################
+print("\nif-s are not only about booleans")
+def not_boolean_if():
+    if None:  # null is no
+        print("yes")
+    else:
+        print("no")  # STDOUT: no
+
+    if '':  # empty string is no
+        print("yes")
+    else:
+        print("no")  # STDOUT: no
+
+    if 'a':  # non-empty string is yes
+        print("yes")
+    else:
+        print("no")  # STDOUT: yes
+
+    if 0:  # zero is no
+        print("yes")
+    else:
+        print("no")  # STDOUT: no
+
+    if -1:  # non-zero is yes
+        print("yes")
+    else:
+        print("no")  # STDOUT: yes
+not_boolean_if()
+
+#######################################################################################################################
 # print("\nstandard 'switch' which is 'match'")
 # def switch_match(http_code: int):
 #     match http_code:
@@ -27,7 +56,6 @@ standard_if(3)  # STDOUT: more than two
 #             return "In my professional opinion, something has fucked up"
 # switch_match(500)  # STDOUT: In my professional opinion, something has fucked up
 # wow, I'm commenting out this since they figured out this clause in 2021, and I still have Python 3.8 :)
-
 
 #######################################################################################################################
 print("\nstandard 'while'")
