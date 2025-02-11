@@ -48,5 +48,9 @@ def dict_builder():
     # print(dict([(1, 2, 3), (3, 4, 5)]))  # ERROR: dictionary update sequence element #0 has length 3; 2 is required
 dict_builder()
 
-
-# TODOLF 5.5
+#######################################################################################################################
+print("\ndict comprehension")
+def dict_comprehension():
+    my_dict = {x: x ** 2 for x in range(4)}
+    print(my_dict)  # STDOUT: {0: 0, 1: 1, 2: 4, 3: 9}
+dict_comprehension()
