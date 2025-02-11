@@ -1,8 +1,6 @@
-from typing import Callable
-
 #######################################################################################################################
 print("function definition")
-def add2(x: int) -> int:  # takes int and return int
+def add2(x: int) -> int:  # takes int and returns int
     return x + 2
 print(add2(5))  # STDOUT: 7
 
@@ -11,14 +9,17 @@ print("\nfunction can be stored as variable")
 add2ref = add2
 print(add2ref)  # STDOUT: <function add2 at 0x7ff44ab93b80>
 print(type(add2ref))  # STDOUT: <class 'function'>
-print(add2ref(5))
+print(add2ref(5))  # STDOUT: 7
 
 #######################################################################################################################
 print("\nfunction can be represented as callable interface")
-MyFunctionType = Callable[[int], int]  # voodoo binding between lang construct and importable type
-def consume_add_2(f: MyFunctionType):
-    # result: str = f(5)  # complaints about "str" type
-    # result = f("5")  # complaints about "str" type
+from typing import Callable  # already known
+def consume_add_2(f: Callable[[int], int]):
+                              # ^     ^
+                              # |     |- return type
+                              # |------- argument types
+    # result = f("5")  # complaints about "str" type (as an argument type)
+    # result: str = f(5)  # complaints about "str" type (as a return type)
     result: int = f(5)  # all types are proper, no complaints
     print(result)
 consume_add_2(add2ref)  # STDOUT: 7
