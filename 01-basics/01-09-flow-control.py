@@ -18,6 +18,18 @@ standard_if(2)  # STDOUT: two
 standard_if(3)  # STDOUT: more than two
 
 #######################################################################################################################
+# print("\nstandard 'switch' which is 'match'")
+# def switch_match(http_code: int):
+#     match http_code:
+#         case 404:
+#             return "Not found"
+#         case _:
+#             return "In my professional opinion, something has fucked up"
+# switch_match(500)  # STDOUT: In my professional opinion, something has fucked up
+# wow, I'm commenting out this since they figured out this clause in 2021, and I still have Python 3.8 :)
+
+
+#######################################################################################################################
 print("\nstandard 'while'")
 def standard_while(x: int):
     while x < 10:
@@ -62,7 +74,7 @@ def break_continue():
             break  # breaks A-loop
     print("")
     # STDOUT: x=1 y=1 x=2 y=1 
-    # but no label-based break, though
+    # no label-based break, though
 
     for x in range(1, 10):
         if x % 2 == 0:
@@ -96,15 +108,22 @@ def loop_else():
         print("for/while loop has 'else' block which is not executed if loop has been broken")
 loop_else()  # STDOUT: for/while loop has 'else' block which is executed only if loop hasn't been broken
 
-# TODOLF 5.6
-
 #######################################################################################################################
-# print("\nstandard 'switch' which is 'match'")
-# def switch_match(http_code: int):
-#     match http_code:
-#         case 404:
-#             return "Not found"
-#         case _:
-#             return "In my professional opinion, something has fucked up"
-# switch_match(500)  # STDOUT: In my professional opinion, something has fucked up
-# wow, I'm commenting out this since they figured out this clause in 2021, and I still have Python 3.8 :)
+print("\nadvanced loops")
+def advanced_loops():
+    # dicts
+    for k, v in {"one": 1, "two": 2}.items():
+        print(k, "=", v, end=" ")  # STDOUT: one = 1 two = 2
+    print()
+
+    # lists with index
+    for i, v in enumerate([1, 2, 3, 4]):
+        print(i, "=", v, end=" ")  # STDOUT: 0 = 1 1 = 2 2 = 3 3 = 4
+    print()
+
+    # zipped lists
+    my_list_1 = [0, 1, 2]
+    my_list_2 = ["zero", "one", "two"]
+    for k, v in zip(my_list_1, my_list_2):
+        print(k, "=", v, end=" ")  # STDOUT: 0 = zero 1 = one 2 = two
+advanced_loops()
