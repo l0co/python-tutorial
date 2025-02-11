@@ -50,6 +50,10 @@ def strings():
     # my_string[0] = "1"     # ERROR: 'str' object does not support item assignment" exception is thrown here
                              # so, finally, strings are immutable
 
+    # checking whether a substring exists in string
+    print("3" in my_string)  # STDOUT: True
+    print("34" in my_string)  # STDOUT: True
+
     # length
     print(len(my_string))  # STDOUT: 10 (by built-in multipurpose function)
 strings()

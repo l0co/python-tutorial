@@ -6,6 +6,22 @@ def simple_list():
 simple_list()
 
 #######################################################################################################################
+print("\ntyped list")
+def typed_list():
+    from typing import List
+    my_typed_list: List[int] = [1, 2, 3]
+    print(my_typed_list)  # STDOUT: [1, 2, 3]
+    my_typed_list = [1, 2, "three"]  # no even a warn
+    print(my_typed_list)  # STDOUT: [1, 2, 'three']
+    # so, you can make a list typed in the same way as tuple, but it doesn't change much, in the same way as for tuple
+    # Python typing recap:
+    #   1. typing doesn't work
+    #   2. especially generic typing doesn't work
+    #   3. anyway use typing where it's possible for yourself only, and sometimes you'll be prized with IDE warnings
+typed_list()
+
+
+#######################################################################################################################
 print("\nsame accessing and slicing as strings")
 def list_access_and_slicing():
     my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
