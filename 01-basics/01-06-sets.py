@@ -44,5 +44,3 @@ def set_comprehension():
     print(my_set)  # STDOUT: {0, 1, 4, 9}
 set_comprehension()
 
-
-# TODOLF 5.5
