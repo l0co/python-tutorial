@@ -26,7 +26,7 @@ consume_add_2(add2ref)  # STDOUT: 7
 consume_add_2(add2)  # STDOUT: 7
 
 #######################################################################################################################
-print("\ndefault function arguments")
+print("\nfunction can have default and named arguments")
 def default_args(a: int = 1, b: int = 2, c: int = 3):
     print(a + b + c)
 default_args()  # STDOUT: 6
@@ -34,7 +34,7 @@ default_args(2)  # STDOUT: 7
 default_args(c=10)  # STDOUT: 13
 
 #######################################################################################################################
-print("\nmultiple function arguments")
+print("\nfunction can take multiple arguments as a tuple or a dict")
 def multiple_args_1(*tuple_arg):  # provided as a tuple
     print(tuple_arg)
 multiple_args_1(1, 2, 3)  # STDOUT: (1, 2, 3)
@@ -49,10 +49,30 @@ def multiple_args_3(*tuple_arg, **dict_arg):  # provided as a tuple and dict
     print(dict_arg)  # STDOUT: {'one': 1, 'two': 2, 'three': 3}
 multiple_args_3(1, 2, 3, one=1, two=2, three=3)
 
-# TODOLF 4.9.3
-# TODOLF 4.9.4
-# TODOLF 4.9.5
-# TODOLF 4.9.6
-# TODOLF 4.9.7
-# TODOLF 4.9.8
-# TODOLF 4.10
+#######################################################################################################################
+print("\ncollections can be unpacked to function arguments")
+def unpack_arguments(a, b, c):
+    print("a", a, "b", b, "c", c)
+unpack_arguments(1, 2, 3)  # STDOUT: a 1 b 2 c 3
+unpack_arguments(*[1, 2, 3])  # an equivalent, unpacks list
+unpack_arguments(*(1, 2, 3))  # an equivalent, unpacks tuple
+unpack_arguments(*{1, 2, 3})  # an equivalent, unpacks set
+unpack_arguments(*{"a": 1, "b": 2, "c": 3})  # STDOUT: a a b b c c
+                                             # surprise: unpacking a dict is only for people with XP>1500 and level>12
+unpack_arguments(**{"a": 1, "b": 2, "c": 3})  # STDOUT: a 1 b 2 c 3
+                                              # ¯\_(ツ)_/¯  why, God?
+
+#######################################################################################################################
+print("\nlambdas are single line only")
+def lambda_test_1():
+    my_lambda = lambda x, y: x + y
+    print(my_lambda(1, 2))  # STDOUT: 3
+lambda_test_1()
+
+# however, this is a simple example to show, but it's not intended to be used like this (assigning as a variable)
+def lambda_test_2():
+    def transform_wisely(a: int, b: int, f: Callable[[int, int], int]):
+        return f(a, b)
+    print(transform_wisely(1, 5, lambda x, y: x + y))  # STDOUT: 6
+lambda_test_2()
+
