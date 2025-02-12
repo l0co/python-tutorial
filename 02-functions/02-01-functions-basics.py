@@ -33,7 +33,22 @@ default_args()  # STDOUT: 6
 default_args(2)  # STDOUT: 7
 default_args(c=10)  # STDOUT: 13
 
-# TODOLF 4.9.2
+#######################################################################################################################
+print("\nmultiple function arguments")
+def multiple_args_1(*tuple_arg):  # provided as a tuple
+    print(tuple_arg)
+multiple_args_1(1, 2, 3)  # STDOUT: (1, 2, 3)
+
+def multiple_args_2(**dict_arg):  # provided as a dict
+    print(dict_arg)
+multiple_args_2(one=1, two=2, three=3)  # STDOUT: {'one': 1, 'two': 2, 'three': 3}
+# multiple_args_2(1, 2, 3)  # ERROR: multiple_args_2() takes 0 positional arguments but 3 were given
+
+def multiple_args_3(*tuple_arg, **dict_arg):  # provided as a tuple and dict
+    print(tuple_arg)  # STDOUT: (1, 2, 3)
+    print(dict_arg)  # STDOUT: {'one': 1, 'two': 2, 'three': 3}
+multiple_args_3(1, 2, 3, one=1, two=2, three=3)
+
 # TODOLF 4.9.3
 # TODOLF 4.9.4
 # TODOLF 4.9.5
