@@ -20,7 +20,7 @@ def local_scope_test():
 print("\nshadowing vars")
 global_scope_var = 1
 def shadow_vars_1():
-    print(global_scope_var)
+    print(global_scope_var)  # global scope var isi visible in local scope
 shadow_vars_1()  # STDOUT: 1
 def shadow_vars_2():
     # print(global_scope_var)  # this is even not possible: if I declare local scope var, it shadows global one
@@ -32,6 +32,32 @@ shadow_vars_2()  # STDOUT: 2
 print(global_scope_var)  # STDOUT: 1
 # CONCLUSION: outer scope var can be shadowed, a new variable is defined in this scenario in a local scope,
 # and the outer scope var is left untouched
+
+#######################################################################################################################
+print("\nlocal and global vars")
+def global_local_scope_test():
+    def do_local():
+        my_var = "shadowed"  # creates own var (shadows all other scopes) and immediately removes it after an invocation
+
+    def do_nonlocal():
+        nonlocal my_var  # points to the var from the outer scope (first it's found, possibly)
+                         # so, overrides the value from global_local_scope_test() function scope
+        my_var = "nonlocal"
+
+    def do_global():
+        global my_var  # points to the global scope var (even it doesn't exist right now - then it creates it)
+                       # so, creates a new global var but leaves global_local_scope_test() function scope var untouched
+        my_var = "global"
+
+    my_var = "local"
+    do_local()
+    print("after do_local():", my_var)  # STDOUT: after do_local(): local
+    do_nonlocal()
+    print("after do_nonlocal():", my_var)  # STDOUT: after do_nonlocal(): nonlocal
+    do_global()
+    print("after do_global():", my_var)  # STDOUT: after do_global(): nonlocal
+global_local_scope_test()
+print("in global scope:", my_var)  # STDOUT: in global scope: global
 
 #######################################################################################################################
 print("\ndeclaring multiple vars")
