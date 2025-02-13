@@ -24,7 +24,7 @@ class MyPrivateFieldsStorage:
 # 2. The global storage on python.org produces a new entry for the reported name
 # 3. A name hash is calculated
 # 4. Then this hash is passed back to the compiler
-# 5. Instead of original name, python uses this hash as a variable name
+# 5. Instead of original name, Python uses this hash as a variable name
 
 # disclaimer: this will only be implemented in Python 6, curently it's:
 print(MyPrivateFieldsStorage()._MyPrivateFieldsStorage__private_value)  # STDOUT: 2
