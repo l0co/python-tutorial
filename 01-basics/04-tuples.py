@@ -76,6 +76,14 @@ def typed_tuple():
 typed_tuple()
 
 #######################################################################################################################
+print("\ntuple can be unpacked to variables")
+def tuple_unpack():
+    my_tuple = 1, 2, "three"
+    a, b, c = my_tuple
+    print(a, b, c)  # STDOUT: 1 2 three
+tuple_unpack()
+
+#######################################################################################################################
 print("\ntuples comparison (the same as string)")
 def tuples_comparison():
     print(("A", ) < ("B", ))  # STDOUT: True
