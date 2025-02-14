@@ -24,4 +24,4 @@ print(valueObject)  # STDOUT: ValueObject(first_name='Jane', last_name='Rambo')
 # last but not least, for @dataclass the "field declared in a class is a static one" contract is broken
 # print(ValueObject.first_name)  # ERROR: type object 'ValueObject' has no attribute 'first_name'
 
-# TODOLF 9.8
+

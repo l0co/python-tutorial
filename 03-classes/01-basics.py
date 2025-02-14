@@ -5,7 +5,8 @@ class MyHellower:
     hello_count: int = 1  # everything is public by default
 
     def __init__(self, hello_count: int = 1):  # constructor and methods get the first "self" argument which is "this"
-        self.hello_count = hello_count
+        self.hello_count = hello_count  # so in class methods you will be keeping repeat "self." for thousands times
+                                        # ¯\_(ツ)_/¯  why, God?
 
     def hello(self, who: str):
         for i in range(self.hello_count):
