@@ -1,3 +1,3 @@
-
+from .mymodule import *
 
 
