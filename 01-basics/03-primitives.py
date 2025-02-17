@@ -67,3 +67,5 @@ def strings_comparison():
     print('B' < 'A')  # STDOUT: False
     print('AA' < 'AB')  # STDOUT: True
 strings_comparison()
+
+# TODOLF None and Optional

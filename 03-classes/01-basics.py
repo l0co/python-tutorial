@@ -39,3 +39,5 @@ print(myHellower.dynamic_hello_count)  # STDOUT: 78
 
 # a recap: Python is not only constructed about the concept "you don't know what is this variable type"
 # but also introduces a concept: "you don't know what are this class fields"
+
+# TODOLF enums

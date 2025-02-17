@@ -43,3 +43,6 @@ my_generator = (i*i for i in range(10))
 print(my_generator)  # STDOUT: <generator object <genexpr> at 0x7f2baef28270>
 for i in my_generator:
     print(i, end=" ")  # STDOUT: 0 1 4 9 16 25 36 49 64 81
+
+
+# TODOLF eq, hash for sets
