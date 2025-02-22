@@ -60,7 +60,7 @@ unpack_arguments(*{1, 2, 3})  # an equivalent, unpacks set
 unpack_arguments(*{"a": 1, "b": 2, "c": 3})  # STDOUT: a a b b c c
                                              # surprise: unpacking a dict is only for people with XP>1500 and level>12
 unpack_arguments(**{"a": 1, "b": 2, "c": 3})  # STDOUT: a 1 b 2 c 3
-                                              # ¯\_(ツ)_/¯  why, God?
+                                             # ¯\_(ツ)_/¯  why, God?
 
 #######################################################################################################################
 print("\nlambdas are single line only")
@@ -75,4 +75,23 @@ def lambda_test_2():
         return f(a, b)
     print(transform_wisely(1, 5, lambda x, y: x + y))  # STDOUT: 6
 lambda_test_2()
+
+#######################################################################################################################
+print("\nlamda keeps the surrounding scope")
+def lambda_scope_test():
+    lambdas = []
+    for x in range(5):
+        lambdas.append(lambda: x)
+    for l in lambdas:
+        print(l(), end=" ")  # STDOUT: 4 4 4 4 4
+    print()
+
+    lambdas = []
+    for x in range(5):
+        lambdas.append(lambda x=x: x)  # here's how to avoid this
+    for l in lambdas:
+        print(l(), end=" ")  # STDOUT: 0 1 2 3 4
+    print()
+lambda_scope_test()
+
 

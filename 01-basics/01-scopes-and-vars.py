@@ -20,7 +20,7 @@ def local_scope_test():
 print("\nshadowing vars")
 global_scope_var = 1
 def shadow_vars_1():
-    print(global_scope_var)  # global scope var isi visible in local scope
+    print(global_scope_var)  # global scope var is visible in local scope
 shadow_vars_1()  # STDOUT: 1
 def shadow_vars_2():
     # print(global_scope_var)  # this is even not possible: if I declare local scope var, it shadows global one
