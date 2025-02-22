@@ -88,7 +88,7 @@ def lambda_scope_test():
 
     lambdas = []
     for x in range(5):
-        lambdas.append(lambda x=x: x)  # here's how to avoid this
+        lambdas.append(lambda num=x: num)  # here's how to avoid this
     for l in lambdas:
         print(l(), end=" ")  # STDOUT: 0 1 2 3 4
     print()
