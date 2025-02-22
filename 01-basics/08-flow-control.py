@@ -74,6 +74,30 @@ def for_in():
         print(x, end="")  # STDOUT: 012
     print("")
 
+    for x in (0, 1, 2):  # in tuple
+        print(x, end="")  # STDOUT: 012
+    print("")
+
+    for x in {0, 1, 2}:  # in set
+        print(x, end="")  # STDOUT: 012
+    print("")
+
+    for x in {"a": 0, "b": 1, "c": 2}:  # in dict (default: iterate keys)
+        print(x, end="")  # STDOUT: abc
+    print("")
+
+    for x in {"a": 0, "b": 1, "c": 2}.values():  # in dict (iterate values)
+        print(x, end="")  # STDOUT: 012
+    print("")
+
+    for x in {"a": 0, "b": 1, "c": 2}.items():  # in dict (iterate key-value as tuple)
+        print(x, end="")  # STDOUT: ('a', 0)('b', 1)('c', 2)
+    print("")
+
+    for x, y in {"a": 0, "b": 1, "c": 2}.items():  # in dict (iterate key-value as unpacked tuple)
+        print(x, y, end=" ")  # STDOUT: a 0 b 1 c 2
+    print("")
+
     for x in range(0, 2):  # in range
         print(x, end="")  # STDOUT: 01 (first inclusive, last exclusive)
     print("")
