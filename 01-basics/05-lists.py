@@ -20,7 +20,6 @@ def typed_list():
     #   3. anyway use typing where it's possible for yourself only, and sometimes you'll be prized with IDE warnings
 typed_list()
 
-
 #######################################################################################################################
 print("\nsame accessing and slicing as strings")
 def list_access_and_slicing():
@@ -31,6 +30,9 @@ def list_access_and_slicing():
     print(my_list[2:])     # STDOUT: [2, 3, 4, 5, 6, 7, 8, 9] (list slice: from the head)
     print(my_list[-3:-1])  # STDOUT: [7, 8] (list slice: from the tail)
     print(my_list[-3:])    # STDOUT: [7, 8, 9] (list slice: from the tail)
+    print(my_list[:-3])    # STDOUT: [0, 1, 2, 3, 4, 5, 6] (list slice: from the beginning to -3 element)
+    print(my_list[0:-3])   # STDOUT: [0, 1, 2, 3, 4, 5, 6] (same as above)
+    print(my_list[5:2])    # CAUTION: empty list with no additional warning
     print(my_list[5:2])    # CAUTION: empty list with no additional warning
     # print(my_list[52])   # ERROR: but this ends up with "list index out of range" exception
     my_list[0] = 100       # lists are mutable
